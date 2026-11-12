@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peminjaman Alat Inventaris Sekolah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="container">
+            <div class="brand">
+                <div class="brand=mark">INV</div>
+                <h1>Peminjaman Alat Inventaris <small>SMK Darus
+                        Sa'adah Bogor</small></h1>
+            </div>
+            <div class="user">
+                <span>Halo, <b id="namaUser">...</b></span>
+                <button class="kecil btn-top" id="linkkeluar">Keluar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top:20px;">
+        <nav class="menu">
+            <ul>
+                <li><a href="#" class="tab aktif" data-tab="alat"></a>Data Alat</li>
+                <li><a href="pinjam.html"></a>Peminjaman</li>
+                <li><a href="riwayat.html"></a>Riwayat</li>
+                <li><a href="#" class="tab" data-tab="admin" id="menuAdmin"
+                     style="display:none"></a>Kelola Alat</li>
+            </ul>
+        </nav>
+
+        <div class="a">
+            <div class="stat"><span class="num" id="statTotal">0</span><span class="lbl">Jumlah Alat</span></div>
+            <div class="stat"><span class="num" id="statTersedia">0</span><span class="lbl"></span>Unit Tersedia</div>
+            <div class="stat"><span class="num" id="statDipinjam">0</span><span class="lbl"></span>Unit Dipinjam</div>
+            <div class="stat"><span class="num" id="statTransaksi">0</span><span class="lbl"></span>Total Transaksi
+            </div>
+        </div>
+
+        <section id="tab-alat" class="box">
+            <div class="box-head"> 
+                <h2>Data Alat</h2>
+            </div>
+            <div class="toolbar">
+                <input type="search" id="cari" placeholder="Cari Nama atau Kategori">
+                <select id="filterkategori">
+                    <option value="">Semua Kategori</option>
+                </select>
+                <button class="kecil" id="btnStockRendah">Lihat Stock Menipis</button>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nama Alat</th>
+                            <th>Kategori</th>
+                            <th>Total Stock</th>
+                            <th>Tersedia</th>
+                            <th>Stock</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyAlat"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="tab-admin" class="box" style="display:none">
+            <div class="box-head">
+                <h2>Kelola Data Alat</h2>
+                <button class="kecil" id="btnTambah">+ Tambahkan Alat Baru</button>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nama Alat</th>
+                            <th>Kategori</th>
+                            <th>Total Stock</th>
+                            <th>Tersedia</th>
+                            <th>Stock</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    ><tbody id="tbodyKelola"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <div class="overlay" id="overlayAlat">
+        <div class="modal">
+            <div class="modal-head">
+                <h3 id="judulAlat">+Tambah Alat</h3>
+            </div>
+            <form id="formAlat">
+                <input type="hidden" id="alatId">
+                <div class="a">
+                    <label for="alatNama">Nama Alat</label>
+                    <input type="text" id="alatNama" required>
+                    <div class="baris">
+                        <div class="kontrol">
+                            <label for="alatKategori">Kategori</label>
+                            <input type="text" id="alatKategori" placeholder="Contoh: Multimedia" required>
+                        </div>
+                        <div class="kontrol">
+                            <label for="alatStok">Stok</label>
+                            <input type="number" id="alatStok" min="0" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="kontrol">
+                    <label for="alatKeterangan">Keterangan</label>
+                    <input type="text" id="alatKeterangan" placeholder="Opsional">
+                </div>
+                <div class="aksi">
+                    <button type="button" class="abu" id="batalAlat">Batal</button>
+                    <button type="submit">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

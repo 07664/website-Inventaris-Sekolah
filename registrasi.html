@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi- Peminjaman Inventaris Sekolah</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="auth-page">
+    <div class="auth-luar">
+        <div class="box">
+            <div class="auth-brand">
+                <div class="auth-mark">INV</div>
+                <div>
+                    <div class="auth-title">Buat Akun Baru</div>
+                    <div class="auth-sub">SMK Darus Sa'adah Bogor</div>
+                </div>
+            </div>
+
+            <div id="Pesan" class="Pesan" style="display:none"></div>
+
+            <form id="formDaftar">
+                <div class="baris">
+                    <div class="kontrol">
+                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" id="username" autofocus required>
+                    </div>
+                    <div class="kontrol">
+                        <label for="username">Nama Pengguna</label>
+                        <input type="text" id="username" autofocus required>
+                    </div>
+                </div>
+
+                <div class="baris">
+                    <div class="kontrol">
+                        <label for="password">Kata Sandi</label>
+                        <input type="password" id="password" autofocus required>
+                    </div>
+                    <div class="kontrol">
+                        <label for="password2">Ulangi Kata Sandi</label>
+                        <input type="password" id="password2" autofocus required>
+                    </div>
+                </div>
+
+                <div class="kontrol">
+                    <label for="peran">Daftar Sebagai</label>
+                    <select id="peran">
+                        <option value="siswa">Siswa</option>
+                        <option value="petugas">Petugas</option>
+                    </select>
+                </div>
+
+
+
+                <button type="submit">Masuk</button>
+            </form>
+
+            <p class="kaki">Sudah Punya Akun? <a href=login.html>Login disini</a></p>
+        </div>
+    </div>
+
+    <footer class="footer-bawah">
+        <p>
+            Peminjaman Alat Inventaris &bull; SMK Darus Sa'adah &bull; Tahun Pelajaran 2026/2027
+        </p>
+    </footer>
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>
